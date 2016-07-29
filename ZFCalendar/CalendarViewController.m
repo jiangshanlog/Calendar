@@ -250,8 +250,9 @@ static NSString *DayCell = @"DayCell";
 
 - (void)cancelClick{
         timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(onTimer) userInfo:nil repeats:YES];
-    CalendarDayModel *model =  [_daysSelectedArray lastObject];
-    model.style = CellDayTypeFutur;
+    for (CalendarDayModel *model in _daysSelectedArray) {
+        model.style = CellDayTypeFutur;
+    }
     [_daysSelectedArray removeAllObjects];
     [self.collectionView reloadData];
 
@@ -262,8 +263,9 @@ static NSString *DayCell = @"DayCell";
         
         self.calendarblock(_daysSelectedArray);//传递数组给上级
         timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(onTimer) userInfo:nil repeats:YES];
-        CalendarDayModel *model =  [_daysSelectedArray lastObject];
-        model.style = CellDayTypeFutur;
+        for (CalendarDayModel *model in _daysSelectedArray) {
+            model.style = CellDayTypeFutur;
+        }
         [_daysSelectedArray removeAllObjects];
         [self.collectionView reloadData];
 

@@ -595,11 +595,11 @@
     day.style = CellDayTypeClick;
     //周末
     if (selectcalendarDay.week == 1 || selectcalendarDay.week == 7){
-        selectcalendarDay.style = CellDayTypeWeek;
+        selectcalendarDay.style = CellDayTypeClick;
         
     //工作日
     }else{
-        selectcalendarDay.style = CellDayTypeFutur;
+        selectcalendarDay.style = CellDayTypeClick;
     }
     selectcalendarDay = day;
 }
